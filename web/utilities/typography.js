@@ -13,16 +13,41 @@ export const typeScale = {
 
 export const HeadingPrimary = styled.h1`
   font-size: ${typeScale.header1};
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
-  color: #ffffff;
-  position: relative;
-  z-index: 1;
+  color: #000000;
 `;
 
 export const HeadingSecondary = styled.h2`
   font-size: ${typeScale.header2};
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
-  color: #ffffff;
+  color: #000000;
+`;
+
+export const HeadingTertiary = styled.h3`
+  font-size: ${typeScale.header3};
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000000;
+`;
+
+export const HeadingQuaternary = styled.h4`
+  font-size: ${typeScale.header4};
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000000;
+`;
+
+export const HeadingQuinary = styled.h5`
+  font-size: ${typeScale.header5};
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000000;
+`;
+export const Paragraph = styled.p`
+  font-size: ${typeScale.paragraph};
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000000;
 `;
