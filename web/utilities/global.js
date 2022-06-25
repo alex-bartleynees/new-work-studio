@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { primaryFont } from "./typography";
 import { normalize } from "polished";
-import mainImage from "../public/Houhere-House.jpg";
+import { primary } from "./colors";
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize()}
@@ -30,5 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     body {
         box-sizing: border-box;
         font-family: ${primaryFont};
+        height: 100%;
+        background-color: ${primary[100]};
+        padding: 10rem;
+
+        @media (max-width: 600px) {
+            padding: 3rem;
+         }
     }
 `;

@@ -5,11 +5,7 @@ import Menu from "../components/Menu/menu";
 import ContactInformation from "../components/Contact-Information/contact-information";
 
 import { MainContainer } from "./index";
-import {
-  HeadingPrimary,
-  HeadingQuaternary,
-  typeScale,
-} from "../utilities/typography";
+import { HeadingPrimary, typeScale } from "../utilities/typography";
 
 const TopContainer = styled.div`
   display: flex;
@@ -17,16 +13,11 @@ const TopContainer = styled.div`
   justify-content: space-between;
 `;
 
-const HeadingContainer = styled.div`
-  margin-top: 10rem;
-  margin-left: 10rem;
-`;
-
 const Heading = styled(HeadingPrimary)`
   font-size: ${typeScale.header4};
   font-weight: 400;
   line-height: 1.2;
-  color: #000000;
+  margin: 0;
 `;
 
 export default function Projects() {
@@ -40,9 +31,7 @@ export default function Projects() {
 
       <MainContainer>
         <TopContainer>
-          <HeadingContainer>
-            <Heading>Recent Projects</Heading>
-          </HeadingContainer>
+          <Heading>recent projects</Heading>
           <Menu></Menu>
         </TopContainer>
         <ContactInformation></ContactInformation>

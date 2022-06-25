@@ -7,9 +7,7 @@ const ContactInformationContainer = styled.div`
   grid-template-columns: 80px 1fr;
   grid-gap: 0.5rem;
   place-self: flex-start;
-  margin-left: 10rem;
   margin-top: auto;
-  margin-bottom: 10rem;
 `;
 
 const CallHeading = styled(HeadingQuaternary)`

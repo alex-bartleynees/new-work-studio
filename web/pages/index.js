@@ -8,12 +8,16 @@ import HeadingMain from "../components/Heading-Main/heading-main";
 import { primary } from "../utilities/colors";
 
 export const MainContainer = styled.section`
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height, 20rem));
   background-color: ${primary[100]};
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 600px) {
+    --header-height: 6rem;
+  }
 `;
 
 export default function Home() {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import { HeadingQuaternary } from "../../utilities/typography";
 
@@ -5,7 +6,10 @@ const MenuContainer = styled.div`
   display: flex;
   gap: 1.5rem;
   place-self: flex-end;
-  margin: 10rem 20rem 10rem 10rem;
+`;
+
+const LinkHeading = styled(HeadingQuaternary)`
+  cursor: pointer;
 `;
 
 export default function Menu() {
@@ -15,10 +19,12 @@ export default function Menu() {
         <HeadingQuaternary>menu</HeadingQuaternary>
       </div>
       <div>
-        <HeadingQuaternary> - projects</HeadingQuaternary>
-        <HeadingQuaternary> - process </HeadingQuaternary>
-        <HeadingQuaternary> - collaborators</HeadingQuaternary>
-        <HeadingQuaternary> - reputation</HeadingQuaternary>
+        <Link href="/projects">
+          <LinkHeading> - projects</LinkHeading>
+        </Link>
+        <LinkHeading> - process </LinkHeading>
+        <LinkHeading> - collaborators</LinkHeading>
+        <LinkHeading> - reputation</LinkHeading>
       </div>
     </MenuContainer>
   );
