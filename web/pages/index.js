@@ -1,14 +1,10 @@
 import Head from "next/head";
 import styled from "styled-components";
-import mainImage from "../public/Houhere-House.jpg";
-import Image from "next/image";
-import {
-  HeadingPrimary,
-  HeadingQuaternary,
-  HeadingSecondary,
-  HeadingTertiary,
-  Paragraph,
-} from "../utilities/typography";
+
+import Menu from "../components/Menu/menu";
+import ContactInformation from "../components/Contact-Information/contact-information";
+import HeadingMain from "../components/Heading-Main/heading-main";
+
 import { primary } from "../utilities/colors";
 
 const MainContainer = styled.section`
@@ -18,64 +14,6 @@ const MainContainer = styled.section`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-`;
-
-const ProjectsContainer = styled.section`
-  min-height: 100vh;
-  display: flex;
-  background-color: ${primary[400]};
-`;
-
-const HeadingContainer = styled.div`
-  text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-`;
-
-const ProjectsHeadingContainer = styled.div`
-  background-color: ${primary[200]};
-  height: 8rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
-  margin-top: 2rem;
-`;
-
-const ContactInformation = styled.div`
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  grid-gap: 0.5rem;
-  place-self: flex-start;
-  margin-left: 10rem;
-  margin-top: auto;
-  margin-bottom: 10rem;
-`;
-
-const ItalicHeading = styled(HeadingSecondary)`
-  font-style: italic;
-`;
-
-const CallHeading = styled(HeadingQuaternary)`
-  grid-row: 1 / 2;
-`;
-
-const EmailHeading = styled(HeadingQuaternary)`
-  grid-row: 2 / 3;
-`;
-
-const VisitHeading = styled(HeadingQuaternary)`
-  grid-row: 3 / 4;
-`;
-
-const MenuContainer = styled.div`
-  display: flex;
-  gap: 1.5rem;
-  place-self: flex-end;
-  margin: 10rem 20rem 10rem 10rem;
 `;
 
 export default function Home() {
@@ -88,41 +26,10 @@ export default function Home() {
       </Head>
 
       <MainContainer>
-        <MenuContainer>
-          <div>
-            <HeadingQuaternary>menu</HeadingQuaternary>
-          </div>
-          <div>
-            <HeadingQuaternary> - projects</HeadingQuaternary>
-            <HeadingQuaternary> - process </HeadingQuaternary>
-            <HeadingQuaternary> - collaborators</HeadingQuaternary>
-            <HeadingQuaternary> - reputation</HeadingQuaternary>
-          </div>
-        </MenuContainer>
-        <HeadingContainer>
-          <HeadingPrimary>new work studio / tim nees architects</HeadingPrimary>
-          <ItalicHeading>"beyond beautiful"</ItalicHeading>
-        </HeadingContainer>
-        <ContactInformation>
-          <CallHeading>call</CallHeading>
-          <EmailHeading>email</EmailHeading>
-          <VisitHeading>visit</VisitHeading>
-          <HeadingQuaternary>021 846 333</HeadingQuaternary>
-          <HeadingQuaternary>
-            <a href="mailto:tim@timneesarchitect.com">
-              tim@timneesarchitect.com
-            </a>
-          </HeadingQuaternary>
-          <HeadingQuaternary>
-            139 Taylor's Mistake Road, Otauhai, Aotearoa
-          </HeadingQuaternary>
-        </ContactInformation>
+        <Menu></Menu>
+        <HeadingMain></HeadingMain>
+        <ContactInformation></ContactInformation>
       </MainContainer>
-      <ProjectsContainer>
-        <ProjectsHeadingContainer>
-          <HeadingSecondary>recent projects</HeadingSecondary>
-        </ProjectsHeadingContainer>
-      </ProjectsContainer>
     </>
   );
 }
