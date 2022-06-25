@@ -7,7 +7,7 @@ import HeadingMain from "../components/Heading-Main/heading-main";
 
 import { primary } from "../utilities/colors";
 
-const MainContainer = styled.section`
+export const MainContainer = styled.section`
   min-height: 100vh;
   background-color: ${primary[100]};
   display: flex;
