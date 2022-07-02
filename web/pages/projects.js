@@ -8,7 +8,7 @@ import ContactInformation from "../components/Contact-Information/contact-inform
 
 import { MainContainer } from "./index";
 import { HeadingPrimary, typeScale } from "../utilities/typography";
-import { urlFor } from "../utilities/image-url";
+import ImageLinks from "../components/Image-Links/image-links";
 
 const TopContainer = styled.div`
   display: flex;
@@ -21,20 +21,6 @@ const Heading = styled(HeadingPrimary)`
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10rem;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 `;
 
 export default function Projects({ projects }) {
@@ -52,16 +38,7 @@ export default function Projects({ projects }) {
           <Heading>recent projects</Heading>
           <Menu></Menu>
         </TopContainer>
-        <ImageContainer>
-          {projects.map((project) => (
-            <div key={project._id}>
-              <Image
-                src={urlFor(project.images[0]).width(400).height(400).url()}
-                alt={project.images[0].alt}
-              />
-            </div>
-          ))}
-        </ImageContainer>
+        <ImageLinks projects={projects}></ImageLinks>
         <ContactInformation></ContactInformation>
       </MainContainer>
     </>
@@ -70,7 +47,7 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const projects = await client.fetch(
-    groq`*[_type == "projects" && !archive] | order(_updatedAt desc)`
+    groq`*[_type == "projects" && !archive][0..4]  | order(_createdAt desc)`
   );
   return {
     props: {
