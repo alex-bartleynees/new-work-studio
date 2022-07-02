@@ -8,6 +8,11 @@ const ImageContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 10rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-block: 5rem;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -29,6 +34,19 @@ const ImageWrapper = styled.div`
     left: 0;
     transition: all 0.5s;
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  @media (hover: none) {
+    &:after {
+      content: "";
+      position: absolute;
+      height: 99.5%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition: all 0.5s;
+      background: rgba(0, 0, 0, 0.3);
+    }
   }
 `;
 
@@ -58,22 +76,40 @@ const ImageInfo = styled.div.attrs({
   justify-content: space-between;
   flex-direction: column;
   height: 90%;
+
+  @media (hover: none) {
+    opacity: 1;
+    height: 95%;
+  }
 `;
 
 export default function ImageLinks({ projects }) {
   return (
     <ImageContainer>
-      {projects.map((project) => (
-        <Link href={`/projects/${project.slug.current}`}>
+      {projects.map((project, index) => (
+        <Link
+          href={
+            index !== projects.length - 1
+              ? `/projects/${project.slug.current}`
+              : `/projects/archive`
+          }
+        >
           <ImageWrapper key={project._id}>
             <Image
               src={urlFor(project.images[0]).width(800).height(800).url()}
               alt={project.images[0].alt}
             />
-            <ImageInfo>
-              <p>{project.title}</p>
-              <p>View Project</p>
-            </ImageInfo>
+            {index !== projects.length - 1 ? (
+              <ImageInfo>
+                <p>{project.title}</p>
+                <p>View Project</p>
+              </ImageInfo>
+            ) : (
+              <ImageInfo>
+                <p>&nbsp;</p>
+                <p>View Archive</p>
+              </ImageInfo>
+            )}
           </ImageWrapper>
         </Link>
       ))}
