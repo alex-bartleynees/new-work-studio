@@ -87,14 +87,14 @@ export default function ImageLinks({ projects }) {
   return (
     <ImageContainer>
       {projects.map((project, index) => (
-        <Link
+        <Link key={project._id}
           href={
             index !== projects.length - 1
               ? `/projects/${project.slug.current}`
               : `/projects/archive`
           }
         >
-          <ImageWrapper key={project._id}>
+          <ImageWrapper>
             <Image
               src={urlFor(project.images[0]).width(800).height(800).url()}
               alt={project.images[0].alt}

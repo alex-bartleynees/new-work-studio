@@ -24,7 +24,6 @@ const Heading = styled(HeadingPrimary)`
 `;
 
 export default function Projects({ projects }) {
-  console.log(projects);
   return (
     <>
       <Head>
