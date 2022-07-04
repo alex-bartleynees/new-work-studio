@@ -75,12 +75,14 @@ export default {
     select: {
       images: "images",
       image: "images.0",
+      title: "title",
     },
     prepare(selection) {
-      const { image } = selection;
+      const { image, title } = selection;
 
       return {
         media: image,
+        title: title,
       };
     },
   },
