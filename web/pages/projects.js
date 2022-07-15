@@ -10,13 +10,13 @@ import { MainContainer } from "./index";
 import { HeadingPrimary, typeScale } from "../utilities/typography";
 import ImageLinks from "../components/Image-Links/image-links";
 
-const TopContainer = styled.div`
+export const TopContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
 `;
 
-const Heading = styled(HeadingPrimary)`
+export const Heading = styled(HeadingPrimary)`
   font-size: ${typeScale.header4};
   font-weight: 400;
   line-height: 1.2;

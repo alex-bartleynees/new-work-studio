@@ -5,11 +5,8 @@ import Menu from "../components/Menu/menu";
 import ContactInformation from "../components/Contact-Information/contact-information";
 import HeadingMain from "../components/Heading-Main/heading-main";
 
-import { primary } from "../utilities/colors";
-
-export const MainContainer = styled.section`
+export const MainContainer = styled.main`
   min-height: calc(100vh - var(--header-height, 20rem));
-  background-color: ${primary[100]};
   display: flex;
   justify-content: space-around;
   align-items: center;
