@@ -9,6 +9,7 @@ import ContactInformation from "../../components/Contact-Information/contact-inf
 
 import { MainContainer } from "../index";
 import { TopContainer, Heading } from "../projects";
+import Carousel from "../../components/Carousel/carousel";
 
 export default function Project({ project }) {
   console.log(project);
@@ -25,7 +26,7 @@ export default function Project({ project }) {
           <Heading>{project?.title}</Heading>
           <Menu></Menu>
         </TopContainer>
-
+        <Carousel slides={project.images}></Carousel>
         <ContactInformation></ContactInformation>
       </MainContainer>
     </>
