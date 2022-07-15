@@ -16,8 +16,6 @@ const ImageContainer = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  width: 400;
-  height: 400;
   cursor: pointer;
   position: relative;
 
@@ -87,7 +85,8 @@ export default function ImageLinks({ projects }) {
   return (
     <ImageContainer>
       {projects.map((project, index) => (
-        <Link key={project._id}
+        <Link
+          key={project._id}
           href={
             index !== projects.length - 1
               ? `/projects/${project.slug.current}`
