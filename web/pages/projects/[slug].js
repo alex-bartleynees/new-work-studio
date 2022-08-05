@@ -16,6 +16,10 @@ const DescriptionText = styled.div`
   position: absolute;
   top: 13rem;
   left: 10rem;
+
+  @media (max-width: 600px) {
+    left: 3rem;
+  }
 `;
 
 export default function Project({ project }) {
