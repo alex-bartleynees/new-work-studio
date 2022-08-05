@@ -22,7 +22,9 @@ export default function Menu() {
         <Link href="/projects">
           <LinkHeading> - projects</LinkHeading>
         </Link>
-        <LinkHeading> - process </LinkHeading>
+        <Link href="/process">
+          <LinkHeading> - process </LinkHeading>
+        </Link>
         <LinkHeading> - collaborators</LinkHeading>
         <LinkHeading> - reputation</LinkHeading>
       </div>
