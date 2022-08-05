@@ -5,10 +5,18 @@ import groq from "groq";
 import client from "../../client-config";
 
 import Menu from "../../components/Menu/menu";
+import Carousel from "../../components/Carousel/carousel";
+import TitleLink from "../../components/Title-Link/title-link";
 
 import { MainContainer } from "../index";
 import { TopContainer, Heading } from "../projects";
-import Carousel from "../../components/Carousel/carousel";
+
+const DescriptionText = styled.div`
+  width: 50%;
+  position: absolute;
+  top: 13rem;
+  left: 10rem;
+`;
 
 export default function Project({ project }) {
   console.log(project);
@@ -21,11 +29,16 @@ export default function Project({ project }) {
       </Head>
 
       <MainContainer>
+        <TitleLink top={true} href="/"></TitleLink>
         <TopContainer>
           <Heading>{project?.title}</Heading>
           <Menu></Menu>
         </TopContainer>
+        <DescriptionText>
+          <p>{project?.description}</p>
+        </DescriptionText>
         <Carousel slides={project.images}></Carousel>
+        <TitleLink href="/"></TitleLink>
       </MainContainer>
     </>
   );

@@ -41,8 +41,14 @@ const SlideImg = styled.img`
   object-fit: cover;
 `;
 
+const SlideText = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+`;
+
 export default function Carousel({ slides }) {
-  console.log("slides", slides);
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
@@ -72,14 +78,21 @@ export default function Carousel({ slides }) {
                 <CarouselSlideInner>
                   <SlideImg src={urlFor(slide)} alt={slide?.alt}></SlideImg>
                 </CarouselSlideInner>
-                <p>{slide?.title}</p>
-                <p>{slide?.description}</p>
+                <SlideText>
+                  <p>{slide?.title}</p>
+                  <p>{slide?.description}</p>
+                  <p>{slide?.credits}</p>
+                </SlideText>
               </CarouselSlide>
             ))}
           </CarouselContainer>
         </ContainerViewPort>
-        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+        {slides.length > 1 && (
+          <>
+            <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+            <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+          </>
+        )}
       </Container>
     </>
   );
