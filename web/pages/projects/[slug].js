@@ -5,7 +5,6 @@ import groq from "groq";
 import client from "../../client-config";
 
 import Menu from "../../components/Menu/menu";
-import ContactInformation from "../../components/Contact-Information/contact-information";
 
 import { MainContainer } from "../index";
 import { TopContainer, Heading } from "../projects";
@@ -27,7 +26,6 @@ export default function Project({ project }) {
           <Menu></Menu>
         </TopContainer>
         <Carousel slides={project.images}></Carousel>
-        <ContactInformation></ContactInformation>
       </MainContainer>
     </>
   );

@@ -9,6 +9,7 @@ import ContactInformation from "../components/Contact-Information/contact-inform
 import { MainContainer } from "./index";
 import { HeadingPrimary, typeScale } from "../utilities/typography";
 import ImageLinks from "../components/Image-Links/image-links";
+import TitleLink from "../components/Title-Link/title-link";
 
 export const TopContainer = styled.div`
   display: flex;
@@ -16,11 +17,19 @@ export const TopContainer = styled.div`
   justify-content: space-between;
 `;
 
+export const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
 export const Heading = styled(HeadingPrimary)`
   font-size: ${typeScale.header4};
   font-weight: 400;
   line-height: 1.2;
   margin: 0;
+  padding: 0;
 `;
 
 export default function Projects({ projects }) {
@@ -33,12 +42,15 @@ export default function Projects({ projects }) {
       </Head>
 
       <MainContainer>
+        <TitleLink top={true} href="/"></TitleLink>
         <TopContainer>
           <Heading>recent projects</Heading>
           <Menu></Menu>
         </TopContainer>
         <ImageLinks projects={projects}></ImageLinks>
+
         <ContactInformation></ContactInformation>
+        <TitleLink href="/"></TitleLink>
       </MainContainer>
     </>
   );
