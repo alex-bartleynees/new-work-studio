@@ -117,7 +117,7 @@ export default function ImageLinks({ projects, archiveLink }) {
             ) : (
               <ImageInfo>
                 <p>{project.title}</p>
-                <p>View Project</p>
+                <p>View Page</p>
               </ImageInfo>
             )}
           </ImageWrapper>
