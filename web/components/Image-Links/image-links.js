@@ -5,9 +5,10 @@ import { urlFor } from "../../utilities/image-url";
 const ImageContainer = styled.div`
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 10rem;
+  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -18,6 +19,7 @@ const ImageContainer = styled.div`
 const ImageWrapper = styled.div`
   cursor: pointer;
   position: relative;
+  max-width: 40rem;
 
   &:hover .image-info {
     opacity: 1;
@@ -81,16 +83,18 @@ const ImageInfo = styled.div.attrs({
   }
 `;
 
-export default function ImageLinks({ projects }) {
+export default function ImageLinks({ projects, archiveLink }) {
   return (
     <ImageContainer>
-      {projects.map((project, index) => (
+      {projects?.map((project, index) => (
         <Link
           key={project._id}
           href={
-            index !== projects.length - 1
-              ? `/projects/${project.slug.current}`
-              : `/projects/archive`
+            archiveLink
+              ? index !== projects.length - 1
+                ? `/projects/${project.slug.current}`
+                : `/projects/archive`
+              : `/projects/${project.slug.current}`
           }
         >
           <ImageWrapper>
@@ -98,15 +102,22 @@ export default function ImageLinks({ projects }) {
               src={urlFor(project.images[0]).width(800).height(800).url()}
               alt={project.images[0].alt}
             />
-            {index !== projects.length - 1 ? (
+            {archiveLink ? (
+              index !== projects.length - 1 ? (
+                <ImageInfo>
+                  <p>{project.title}</p>
+                  <p>View Project</p>
+                </ImageInfo>
+              ) : (
+                <ImageInfo>
+                  <p>&nbsp;</p>
+                  <p>View Archive</p>
+                </ImageInfo>
+              )
+            ) : (
               <ImageInfo>
                 <p>{project.title}</p>
                 <p>View Project</p>
-              </ImageInfo>
-            ) : (
-              <ImageInfo>
-                <p>&nbsp;</p>
-                <p>View Archive</p>
               </ImageInfo>
             )}
           </ImageWrapper>

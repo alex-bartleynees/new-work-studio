@@ -62,15 +62,7 @@ export default {
       type: "text",
       title: "Description",
     },
-    {
-      name: "archive",
-      type: "boolean",
-      title: "Archive",
-    },
   ],
-  initialValue: {
-    archive: false,
-  },
   preview: {
     select: {
       images: "images",
