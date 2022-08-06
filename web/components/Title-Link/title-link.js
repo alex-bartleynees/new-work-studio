@@ -9,6 +9,10 @@ const Anchor = styled.a(
     cursor: pointer;
     align-self: flex-end;
 
+    @media (max-width: 600px) {
+      display: none;
+    }
+
     ${props.top &&
     css`
       position: absolute;
@@ -17,6 +21,7 @@ const Anchor = styled.a(
 
       @media (max-width: 600px) {
         position: static;
+        display: block;
       }
     `}
   `
