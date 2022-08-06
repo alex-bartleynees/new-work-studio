@@ -73,7 +73,7 @@ export default function Carousel({ slides }) {
       <Container>
         <ContainerViewPort ref={viewportRef}>
           <CarouselContainer>
-            {slides.map((slide) => (
+            {slides?.map((slide) => (
               <CarouselSlide key={slide._key}>
                 <CarouselSlideInner>
                   <SlideImg src={urlFor(slide)} alt={slide?.alt}></SlideImg>
@@ -87,7 +87,7 @@ export default function Carousel({ slides }) {
             ))}
           </CarouselContainer>
         </ContainerViewPort>
-        {slides.length > 1 && (
+        {slides?.length > 1 && (
           <>
             <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
             <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />

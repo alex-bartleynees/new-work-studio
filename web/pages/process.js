@@ -11,7 +11,6 @@ import ImageLinks from "../components/Image-Links/image-links";
 import TitleLink from "../components/Title-Link/title-link";
 
 export default function Process({ process }) {
-  console.log(process);
   return (
     <>
       <Head>

@@ -49,7 +49,7 @@ export default function Project({ data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    groq`*[_type == "collabrators" && defined(slug.current)][].slug.current`
+    groq`*[_type == "process" && defined(slug.current)][].slug.current`
   );
 
   return {

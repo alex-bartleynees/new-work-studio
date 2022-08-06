@@ -22,7 +22,7 @@ const DescriptionText = styled.div`
   }
 `;
 
-export default function Project({ project }) {
+export default function Project({ data }) {
   return (
     <>
       <Head>
@@ -34,13 +34,13 @@ export default function Project({ project }) {
       <MainContainer>
         <TitleLink top={true} href="/"></TitleLink>
         <TopContainer>
-          <Heading>{project?.title}</Heading>
+          <Heading>{data?.title}</Heading>
           <Menu></Menu>
         </TopContainer>
         <DescriptionText>
-          <p>{project?.description}</p>
+          <p>{data?.description}</p>
         </DescriptionText>
-        <Carousel slides={project?.images}></Carousel>
+        <Carousel slides={data?.images}></Carousel>
         <TitleLink href="/"></TitleLink>
       </MainContainer>
     </>
@@ -49,7 +49,7 @@ export default function Project({ project }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    groq`*[_type == "projects" && defined(slug.current)][].slug.current`
+    groq`*[_type == "reputation" && defined(slug.current)][].slug.current`
   );
 
   return {
@@ -60,13 +60,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
-  const project = await client.fetch(
-    groq`*[_type == "projects" && slug.current == "${slug}"]`
+  const data = await client.fetch(
+    groq`*[_type == "reputation" && slug.current == "${slug}"]`
   );
 
   return {
     props: {
-      project: project[0],
+      data: data[0],
     },
   };
 }
