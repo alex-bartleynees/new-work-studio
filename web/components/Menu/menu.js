@@ -25,8 +25,12 @@ export default function Menu() {
         <Link href="/process">
           <LinkHeading> - process </LinkHeading>
         </Link>
-        <LinkHeading> - collaborators</LinkHeading>
-        <LinkHeading> - reputation</LinkHeading>
+        <Link href="/collabrators">
+          <LinkHeading> - collaborators</LinkHeading>
+        </Link>
+        <Link href="/reputation">
+          <LinkHeading> - reputation</LinkHeading>
+        </Link>
       </div>
     </MenuContainer>
   );
