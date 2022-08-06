@@ -83,29 +83,29 @@ const ImageInfo = styled.div.attrs({
   }
 `;
 
-export default function ImageLinks({ projects, archiveLink }) {
+export default function ImageLinks({ data, type, archiveLink }) {
   return (
     <ImageContainer>
-      {projects?.map((project, index) => (
+      {data?.map((item, index) => (
         <Link
-          key={project._id}
+          key={item._id}
           href={
             archiveLink
-              ? index !== projects.length - 1
-                ? `/projects/${project.slug.current}`
-                : `/projects/archive`
-              : `/projects/${project.slug.current}`
+              ? index !== item.length - 1
+                ? `/${type}/${item.slug.current}`
+                : `/${type}/archive`
+              : `/${type}/${item.slug.current}`
           }
         >
           <ImageWrapper>
             <Image
-              src={urlFor(project.images[0]).width(800).height(800).url()}
-              alt={project.images[0].alt}
+              src={urlFor(item.images[0]).width(800).height(800).url()}
+              alt={item.images[0].alt}
             />
             {archiveLink ? (
-              index !== projects.length - 1 ? (
+              index !== item.length - 1 ? (
                 <ImageInfo>
-                  <p>{project.title}</p>
+                  <p>{item.title}</p>
                   <p>View Project</p>
                 </ImageInfo>
               ) : (
@@ -116,7 +116,7 @@ export default function ImageLinks({ projects, archiveLink }) {
               )
             ) : (
               <ImageInfo>
-                <p>{project.title}</p>
+                <p>{item.title}</p>
                 <p>View Page</p>
               </ImageInfo>
             )}

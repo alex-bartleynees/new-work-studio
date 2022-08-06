@@ -47,7 +47,11 @@ export default function Projects({ projects }) {
           <Heading>recent projects</Heading>
           <Menu></Menu>
         </TopContainer>
-        <ImageLinks archiveLink={true} projects={projects}></ImageLinks>
+        <ImageLinks
+          archiveLink={true}
+          data={projects}
+          type="projects"
+        ></ImageLinks>
 
         <ContactInformation></ContactInformation>
         <TitleLink href="/"></TitleLink>

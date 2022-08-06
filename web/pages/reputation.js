@@ -25,7 +25,7 @@ export default function Reputation({ reputation }) {
           <Heading>reputation</Heading>
           <Menu></Menu>
         </TopContainer>
-        <ImageLinks projects={reputation}></ImageLinks>
+        <ImageLinks data={reputation} type="reputation"></ImageLinks>
 
         <ContactInformation></ContactInformation>
         <TitleLink href="/"></TitleLink>

@@ -26,7 +26,7 @@ export default function Process({ process }) {
           <Heading>process</Heading>
           <Menu></Menu>
         </TopContainer>
-        <ImageLinks projects={process}></ImageLinks>
+        <ImageLinks data={process} type="process"></ImageLinks>
 
         <ContactInformation></ContactInformation>
         <TitleLink href="/"></TitleLink>

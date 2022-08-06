@@ -25,7 +25,7 @@ export default function Collabrators({ collabrators }) {
           <Heading>collabrators</Heading>
           <Menu></Menu>
         </TopContainer>
-        <ImageLinks projects={collabrators}></ImageLinks>
+        <ImageLinks data={collabrators} type="collabrators"></ImageLinks>
 
         <ContactInformation></ContactInformation>
         <TitleLink href="/"></TitleLink>
