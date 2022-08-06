@@ -12,7 +12,7 @@ const Anchor = styled.a(
     ${props.top &&
     css`
       position: absolute;
-      top: 7rem;
+      top: 5rem;
       margin-right: 1rem;
 
       @media (max-width: 600px) {
