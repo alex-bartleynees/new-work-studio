@@ -33,7 +33,7 @@ export default function ContactInformation() {
         <a href="mailto:tim@timneesarchitect.com">tim@timneesarchitect.com</a>
       </HeadingQuaternary>
       <HeadingQuaternary>
-        139 Taylor's Mistake Road, Otauhai, Aotearoa
+        139 Taylor's Mistake Road, Ōtautahi, Aotearoa
       </HeadingQuaternary>
     </ContactInformationContainer>
   );
