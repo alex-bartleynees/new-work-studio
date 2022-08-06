@@ -91,7 +91,7 @@ export default function ImageLinks({ data, type, archiveLink }) {
           key={item._id}
           href={
             archiveLink
-              ? index !== item.length - 1
+              ? index !== data.length - 1
                 ? `/${type}/${item.slug.current}`
                 : `/${type}/archive`
               : `/${type}/${item.slug.current}`
@@ -103,7 +103,7 @@ export default function ImageLinks({ data, type, archiveLink }) {
               alt={item.images[0].alt}
             />
             {archiveLink ? (
-              index !== item.length - 1 ? (
+              index !== data.length - 1 ? (
                 <ImageInfo>
                   <p>{item.title}</p>
                   <p>View Project</p>
