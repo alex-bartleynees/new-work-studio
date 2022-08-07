@@ -17,6 +17,7 @@ export default function Projects({ projects }) {
         heading="projects"
         type="projects"
         data={projects}
+        archiveLink={true}
       ></PageTemplate>
     </>
   );
