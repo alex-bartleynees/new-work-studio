@@ -2,13 +2,7 @@ import Head from "next/head";
 import groq from "groq";
 import client from "../client-config";
 
-import Menu from "../components/Menu/menu";
-import ContactInformation from "../components/Contact-Information/contact-information";
-
-import { MainContainer } from "./index";
-import { Heading, TopContainer } from "./projects";
-import ImageLinks from "../components/Image-Links/image-links";
-import TitleLink from "../components/Title-Link/title-link";
+import PageTemplate from "../components/Page-Template/page-template";
 
 export default function Reputation({ reputation }) {
   return (
@@ -19,17 +13,11 @@ export default function Reputation({ reputation }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <MainContainer>
-        <TitleLink top={true} href="/"></TitleLink>
-        <TopContainer>
-          <Heading>reputation</Heading>
-          <Menu></Menu>
-        </TopContainer>
-        <ImageLinks data={reputation} type="reputation"></ImageLinks>
-
-        <ContactInformation></ContactInformation>
-        <TitleLink href="/"></TitleLink>
-      </MainContainer>
+      <PageTemplate
+        heading="reputation"
+        type="reputation"
+        data={reputation}
+      ></PageTemplate>
     </>
   );
 }

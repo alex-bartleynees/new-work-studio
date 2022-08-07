@@ -4,7 +4,7 @@ import client from "../client-config";
 
 import PageTemplate from "../components/Page-Template/page-template";
 
-export default function Projects({ projects }) {
+export default function Collabrators({ collaborators }) {
   return (
     <>
       <Head>
@@ -14,21 +14,19 @@ export default function Projects({ projects }) {
       </Head>
 
       <PageTemplate
-        heading="projects"
-        type="projects"
-        data={projects}
+        heading="collaborators"
+        type="collaborators"
+        data={collaborators}
       ></PageTemplate>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const projects = await client.fetch(
-    groq`*[_type == "projects" && !archive][0..5]  | order(_createdAt desc)`
-  );
+  const collaborators = await client.fetch(groq`*[_type == "collaborators"]`);
   return {
     props: {
-      projects,
+      collaborators,
     },
   };
 }

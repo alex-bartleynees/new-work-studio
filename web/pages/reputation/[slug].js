@@ -1,28 +1,11 @@
 import Head from "next/head";
-import styled from "styled-components";
-
 import groq from "groq";
 import client from "../../client-config";
 
-import Menu from "../../components/Menu/menu";
-import Carousel from "../../components/Carousel/carousel";
-import TitleLink from "../../components/Title-Link/title-link";
-
-import { MainContainer } from "../index";
-import { TopContainer, Heading } from "../projects";
-
-const DescriptionText = styled.div`
-  width: 50%;
-  position: absolute;
-  top: 13rem;
-  left: 10rem;
-
-  @media (max-width: 600px) {
-    left: 3rem;
-  }
-`;
+import DefaultTemplate from "../../components/Default-Template/default-template";
 
 export default function Project({ data }) {
+  console.log(data);
   return (
     <>
       <Head>
@@ -31,18 +14,7 @@ export default function Project({ data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <MainContainer>
-        <TitleLink top={true} href="/"></TitleLink>
-        <TopContainer>
-          <Heading>{data?.title}</Heading>
-          <Menu></Menu>
-        </TopContainer>
-        <DescriptionText>
-          <p>{data?.description}</p>
-        </DescriptionText>
-        <Carousel slides={data?.images}></Carousel>
-        <TitleLink href="/"></TitleLink>
-      </MainContainer>
+      <DefaultTemplate data={data}></DefaultTemplate>
     </>
   );
 }

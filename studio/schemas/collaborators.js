@@ -1,5 +1,5 @@
 export default {
-  name: "collabrators",
+  name: "collaborators",
   title: "Collaborators",
   type: "document",
   fields: [
