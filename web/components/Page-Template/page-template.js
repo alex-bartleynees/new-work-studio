@@ -22,13 +22,19 @@ export const Heading = styled(HeadingPrimary)`
   padding: 0;
 `;
 
-export default function PageTemplate({ data, heading, type, archiveLink }) {
+export default function PageTemplate({
+  data,
+  heading,
+  type,
+  archiveLink,
+  active,
+}) {
   return (
     <MainContainer>
       <TitleLink top={true} href="/"></TitleLink>
       <TopContainer>
         <Heading>{heading}</Heading>
-        <Menu></Menu>
+        <Menu active={active}></Menu>
       </TopContainer>
       <ImageLinks
         data={data}

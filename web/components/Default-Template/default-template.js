@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import Menu from "../Menu/menu";
 import Carousel from "../Carousel/carousel";
 import TitleLink from "../Title-Link/title-link";
 
@@ -24,7 +23,6 @@ export default function DefaultTemplate({ data }) {
       <TitleLink top={true} href="/"></TitleLink>
       <TopContainer>
         <Heading>{data?.title}</Heading>
-        <Menu></Menu>
       </TopContainer>
       <DescriptionText>
         <p>{data?.description}</p>

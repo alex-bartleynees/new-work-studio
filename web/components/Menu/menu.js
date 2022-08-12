@@ -10,9 +10,17 @@ const MenuContainer = styled.div`
 
 const LinkHeading = styled(HeadingQuaternary)`
   cursor: pointer;
+  margin-block-end: 0.5rem;
+  text-decoration: ${(props) => (props.active ? "underline" : "none")};
+  text-decoration-color: #330f0a;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: #330f0a;
+  }
 `;
 
-export default function Menu() {
+export default function Menu({ active }) {
   return (
     <MenuContainer>
       <div>
@@ -20,16 +28,24 @@ export default function Menu() {
       </div>
       <div>
         <Link href="/projects">
-          <LinkHeading> - projects</LinkHeading>
+          <LinkHeading active={active === "projects" && true}>
+            - projects
+          </LinkHeading>
         </Link>
         <Link href="/process">
-          <LinkHeading> - process </LinkHeading>
+          <LinkHeading active={active === "process" && true}>
+            - process
+          </LinkHeading>
         </Link>
         <Link href="/collaborators">
-          <LinkHeading> - collaborators</LinkHeading>
+          <LinkHeading active={active === "collaborators" && true}>
+            - collaborators
+          </LinkHeading>
         </Link>
         <Link href="/reputation">
-          <LinkHeading> - reputation</LinkHeading>
+          <LinkHeading active={active === "reputation" && true}>
+            - reputation
+          </LinkHeading>
         </Link>
       </div>
     </MenuContainer>
