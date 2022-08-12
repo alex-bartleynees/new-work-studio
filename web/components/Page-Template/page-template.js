@@ -42,7 +42,7 @@ export default function PageTemplate({
         archiveLink={archiveLink ?? false}
       ></ImageLinks>
 
-      <ContactInformation></ContactInformation>
+      <ContactInformation marginBottom={true}></ContactInformation>
       <TitleLink href="/"></TitleLink>
     </MainContainer>
   );

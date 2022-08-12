@@ -8,6 +8,7 @@ const ContactInformationContainer = styled.div`
   grid-gap: 0.5rem;
   place-self: flex-start;
   margin-top: auto;
+  margin-bottom: ${(props) => (props.marginBottom ? "-19px" : "0")};
 `;
 
 const CallHeading = styled(HeadingQuaternary)`
@@ -22,9 +23,9 @@ const VisitHeading = styled(HeadingQuaternary)`
   grid-row: 3 / 4;
 `;
 
-export default function ContactInformation() {
+export default function ContactInformation({ marginBottom }) {
   return (
-    <ContactInformationContainer>
+    <ContactInformationContainer marginBottom={marginBottom}>
       <CallHeading>call</CallHeading>
       <EmailHeading>email</EmailHeading>
       <VisitHeading>visit</VisitHeading>

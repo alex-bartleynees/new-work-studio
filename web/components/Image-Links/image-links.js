@@ -14,6 +14,11 @@ const ImageContainer = styled.div`
     flex-direction: column;
     margin-block: 5rem;
   }
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
 `;
 
 export default function ImageLinks({ data, type, archiveLink }) {
