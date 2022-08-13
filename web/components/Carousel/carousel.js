@@ -18,6 +18,7 @@ const ContainerViewPort = styled.div`
 
 const CarouselContainer = styled.div`
   display: flex;
+  margin-top: 2rem;
 `;
 
 const CarouselSlide = styled.div`

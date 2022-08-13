@@ -8,9 +8,8 @@ import { TopContainer, Heading } from "../Page-Template/page-template";
 
 const DescriptionText = styled.div`
   width: 50%;
-  position: absolute;
-  top: 13rem;
-  left: 10rem;
+  place-self: flex-start;
+  margin-top: 1rem;
 
   @media (max-width: 600px) {
     left: 3rem;
