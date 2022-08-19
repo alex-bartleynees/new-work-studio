@@ -8,14 +8,6 @@ export const GlobalStyle = createGlobalStyle`
     html {
         font-size: 62.5%;
 
-        @media (max-width: 1200px) { 
-            font-size: 56.25%;
-        }
-
-        @media (max-width: 900px) {
-            font-size: 50%;
-        }
-
         @media (min-width: 1800px) {
             font-size: 75%;
         }
