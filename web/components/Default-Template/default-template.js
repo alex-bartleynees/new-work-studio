@@ -14,6 +14,7 @@ const DescriptionText = styled.div`
 
   @media (max-width: 600px) {
     left: 3rem;
+    width: 100%;
   }
 `;
 
