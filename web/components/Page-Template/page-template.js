@@ -12,6 +12,10 @@ export const TopContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    margin-top: 3rem;
+  }
 `;
 
 export const Heading = styled(HeadingPrimary)`
