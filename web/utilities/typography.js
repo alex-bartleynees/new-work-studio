@@ -8,7 +8,7 @@ export const typeScale = {
   header3: "2.369rem",
   header4: "1.777rem",
   header5: "1.333rem",
-  paragraph: "1rem",
+  paragraph: "1.2rem",
 };
 
 export const HeadingPrimary = styled.h1`

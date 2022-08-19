@@ -5,6 +5,7 @@ import TitleLink from "../Title-Link/title-link";
 
 import { MainContainer } from "../../pages/index";
 import { TopContainer, Heading } from "../Page-Template/page-template";
+import { Paragraph } from "../../utilities/typography";
 
 const DescriptionText = styled.div`
   width: 50%;
@@ -24,7 +25,7 @@ export default function DefaultTemplate({ data }) {
         <Heading>{data?.title}</Heading>
       </TopContainer>
       <DescriptionText>
-        <p>{data?.description}</p>
+        <Paragraph>{data?.description}</Paragraph>
       </DescriptionText>
       <Carousel slides={data?.images}></Carousel>
       <TitleLink href="/"></TitleLink>

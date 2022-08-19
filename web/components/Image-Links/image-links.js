@@ -7,7 +7,7 @@ const ImageContainer = styled.div`
   gap: 1rem;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: ${(props) => (props.archiveLink ? "10rem" : "5rem")};
   width: 100%;
 
   @media (max-width: 768px) {
@@ -23,7 +23,7 @@ const ImageContainer = styled.div`
 
 export default function ImageLinks({ data, type, archiveLink }) {
   return (
-    <ImageContainer>
+    <ImageContainer archiveLink={archiveLink}>
       {data?.map((item, index) => (
         <Link
           key={item._id}

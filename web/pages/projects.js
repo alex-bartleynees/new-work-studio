@@ -26,7 +26,7 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const projects = await client.fetch(
-    groq`*[_type == "projects" && !archive][0..5]  | order(_createdAt desc)`
+    groq`*[_type == "projects"][0..5]  | order(_createdAt desc)`
   );
   return {
     props: {

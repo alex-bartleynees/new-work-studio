@@ -42,7 +42,7 @@ export default function Archive({ data }) {
       <Heading>archive</Heading>
       {data.length ? (
         <GridContainer>
-          {datadata?.map((item) => (
+          {data?.map((item) => (
             <Link key={item._id} href={`/projects/${item.slug.current}`}>
               <a>
                 <ImageWrapper

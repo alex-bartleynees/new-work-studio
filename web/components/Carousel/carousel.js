@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import styled from "styled-components";
 
 import { PrevButton, NextButton } from "./carousel-buttons";
+import { Paragraph } from "../../utilities/typography";
 import { urlFor } from "../../utilities/image-url";
 
 const Container = styled.div`
@@ -80,9 +81,9 @@ export default function Carousel({ slides }) {
                   <SlideImg src={urlFor(slide)} alt={slide?.alt}></SlideImg>
                 </CarouselSlideInner>
                 <SlideText>
-                  <p>{slide?.title}</p>
-                  <p>{slide?.description}</p>
-                  <p>{slide?.credits}</p>
+                  <Paragraph>{slide?.title}</Paragraph>
+                  <Paragraph>{slide?.description}</Paragraph>
+                  <Paragraph>{slide?.credits}</Paragraph>
                 </SlideText>
               </CarouselSlide>
             ))}

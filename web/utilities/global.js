@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${primaryFont};
         height: 100%;
         background-color: ${primary[100]};
-        padding: 10rem;
+        padding: 10rem 10rem 0 10rem;
 
         @media (max-width: 600px) {
             padding: 3rem;
