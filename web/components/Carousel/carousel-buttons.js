@@ -16,6 +16,10 @@ const Button = styled.button`
   align-items: center;
   fill: #fff;
   padding: 0;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const ButtonPrev = styled(Button)`
