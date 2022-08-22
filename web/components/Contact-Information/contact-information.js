@@ -9,6 +9,10 @@ const ContactInformationContainer = styled.div`
   place-self: flex-start;
   margin-top: auto;
   margin-bottom: ${(props) => (props.marginBottom ? "-16px" : "0")};
+
+  @media (max-width: 1200px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const CallHeading = styled(HeadingQuaternary)`
