@@ -12,6 +12,9 @@ const ImageContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 1000px) {
     margin-block: 5rem;
   }
 
