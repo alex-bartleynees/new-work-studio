@@ -9,7 +9,11 @@ const Anchor = styled.a(
     cursor: pointer;
     align-self: flex-end;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1200px) {
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 1000px) {
       display: none;
     }
 
@@ -19,9 +23,12 @@ const Anchor = styled.a(
       top: 5rem;
       margin-right: 1rem;
 
+      @media (max-width: 1000px) {
+        display: block;
+      }
+
       @media (max-width: 600px) {
         position: static;
-        display: block;
       }
     `}
   `
