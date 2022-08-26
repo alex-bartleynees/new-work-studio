@@ -8,7 +8,7 @@ const ContactInformationContainer = styled.div`
   grid-gap: 0.5rem;
   place-self: flex-start;
   margin-top: auto;
-  margin-bottom: ${(props) => (props.marginBottom ? "-16px" : "0")};
+  margin-bottom: ${(props) => (props.marginBottom ? "-19px" : "0")};
 
   @media (max-width: 1200px) {
     margin-bottom: 3rem;
