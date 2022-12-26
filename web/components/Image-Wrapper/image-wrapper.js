@@ -77,10 +77,12 @@ export default function ImageWrapper({
 }) {
   return (
     <ImageContainer>
-      <Image
-        src={urlFor(image.images[0]).width(800).height(800).url()}
-        alt={image.alt}
-      />
+      {image.images && (
+        <Image
+          src={urlFor(image.images[0]).width(800).height(800).url()}
+          alt={image.alt}
+        />
+      )}
       {archiveLink && data ? (
         index !== data.length - 1 ? (
           <ImageInfo>

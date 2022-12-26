@@ -1,11 +1,11 @@
 export default {
-  name: "reputation",
-  title: "Reputation",
+  name: "work-in-progress",
+  title: "Work In Progress",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Reputation Title",
+      title: "Work In Progress Title",
       type: "string",
     },
     {

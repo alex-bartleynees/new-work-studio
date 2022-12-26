@@ -4,8 +4,7 @@ import client from "../../client-config";
 
 import DefaultTemplate from "../../components/Default-Template/default-template";
 
-export default function Project({ data }) {
-  console.log(data);
+export default function WorkInProgress({ data }) {
   return (
     <>
       <Head>
@@ -21,7 +20,7 @@ export default function Project({ data }) {
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    groq`*[_type == "reputation" && defined(slug.current)][].slug.current`
+    groq`*[_type == "work-in-progress" && defined(slug.current)][].slug.current`
   );
 
   return {
@@ -33,7 +32,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const data = await client.fetch(
-    groq`*[_type == "reputation" && slug.current == "${slug}"]`
+    groq`*[_type == "work-in-progress" && slug.current == "${slug}"]`
   );
 
   return {

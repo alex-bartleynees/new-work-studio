@@ -32,14 +32,14 @@ export default function Menu({ active }) {
             - projects
           </LinkHeading>
         </Link>
+        <Link href="/work-in-progress">
+          <LinkHeading active={active === "work in progress" && true}>
+            - work in progress
+          </LinkHeading>
+        </Link>
         <Link href="/process">
           <LinkHeading active={active === "process" && true}>
             - process
-          </LinkHeading>
-        </Link>
-        <Link href="/reputation">
-          <LinkHeading active={active === "reputation" && true}>
-            - reputation
           </LinkHeading>
         </Link>
         <Link href="/projects/archive">
