@@ -37,14 +37,14 @@ export default function Menu({ active }) {
             - process
           </LinkHeading>
         </Link>
-        <Link href="/collaborators">
-          <LinkHeading active={active === "collaborators" && true}>
-            - collaborators
-          </LinkHeading>
-        </Link>
         <Link href="/reputation">
           <LinkHeading active={active === "reputation" && true}>
             - reputation
+          </LinkHeading>
+        </Link>
+        <Link href="/projects/archive">
+          <LinkHeading active={active === "archive" && true}>
+            - archive
           </LinkHeading>
         </Link>
       </div>
