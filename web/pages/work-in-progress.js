@@ -15,7 +15,7 @@ export default function WorksInProgress({ projects }) {
 
       <PageTemplate
         heading="work in progress"
-        type="reputation"
+        type="work-in-progress"
         data={projects}
         active="work in progress"
       ></PageTemplate>
